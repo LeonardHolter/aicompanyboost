@@ -53,11 +53,6 @@ export default function Header() {
       return;
     }
 
-    if (href === 'blog') {
-      window.location.href = '/blog';
-      return;
-    }
-
     // Handle anchor links on home page
     const targetHref = href.startsWith('#') ? href : `#${href}`;
 
@@ -265,12 +260,6 @@ export default function Header() {
             >
               About
             </button>
-            <button
-              onClick={() => handleNavClick('blog')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-            >
-              Blog
-            </button>
           </nav>
 
           {/* CTA Button */}
@@ -319,12 +308,6 @@ export default function Header() {
                 className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
               >
                 About
-              </button>
-              <button
-                onClick={() => handleNavClick('blog')}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
-              >
-                Blog
               </button>
               <Button
                 onClick={handleBookConsultation}
