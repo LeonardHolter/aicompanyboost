@@ -47,27 +47,31 @@ export default function Header() {
     // Close mobile menu first
     setIsMenuOpen(false);
 
-    // Check if it's a page navigation or anchor navigation
-    if (href.startsWith('/') && !href.includes('#')) {
-      // Page navigation (like /about)
-      window.location.href = href;
+    // Handle page routes
+    if (href === 'about') {
+      window.location.href = '/about';
       return;
     }
 
-    // Handle anchor links
-    if (href.startsWith('#')) {
-      // Check if we're on the home page
-      const isHomePage = window.location.pathname === '/';
-
-      if (!isHomePage) {
-        // Navigate to home page with anchor
-        window.location.href = `/${href}`;
-        return;
-      }
-
-      // We're on home page, scroll to anchor
-      // Continue with existing scroll logic...
+    if (href === 'blog') {
+      window.location.href = '/blog';
+      return;
     }
+
+    // Handle anchor links on home page
+    const targetHref = href.startsWith('#') ? href : `#${href}`;
+
+    // Check if we're on the home page
+    const isHomePage = window.location.pathname === '/';
+
+    if (!isHomePage) {
+      // Navigate to home page with anchor
+      window.location.href = `/${targetHref}`;
+      return;
+    }
+
+    // We're on home page, scroll to anchor
+    // Continue with existing scroll logic...
 
     // Comprehensive style reset to enable scrolling
     const resetScrollStyles = () => {
@@ -99,8 +103,8 @@ export default function Header() {
 
     // Multiple attempts to scroll to section
     setTimeout(() => {
-      const element = document.querySelector(href);
-      console.log(`Element found for ${href}:`, element);
+      const element = document.querySelector(targetHref);
+      console.log(`Element found for ${targetHref}:`, element);
 
       if (element) {
         const rect = element.getBoundingClientRect();
@@ -171,7 +175,7 @@ export default function Header() {
           scrollMethods[1](); // Fallback to instant scroll
         }
       } else {
-        console.error(`Element not found: ${href}`);
+        console.error(`Element not found: ${targetHref}`);
 
         // List all available IDs for debugging
         const allIds = Array.from(document.querySelectorAll('[id]')).map(
@@ -238,28 +242,34 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => handleNavClick('#features')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => handleNavClick('features')}
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
               Features
             </button>
             <button
-              onClick={() => handleNavClick('#demo')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => handleNavClick('demo')}
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
               Demo
             </button>
             <button
-              onClick={() => handleNavClick('/about')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => handleNavClick('faq')}
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              FAQ
+            </button>
+            <button
+              onClick={() => handleNavClick('about')}
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
               About
             </button>
             <button
-              onClick={() => handleNavClick('#faq')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => handleNavClick('blog')}
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
-              FAQ
+              Blog
             </button>
           </nav>
 
@@ -293,28 +303,28 @@ export default function Header() {
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4 pt-4">
               <button
-                onClick={() => handleNavClick('#features')}
+                onClick={() => handleNavClick('features')}
                 className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
               >
                 Features
               </button>
               <button
-                onClick={() => handleNavClick('#demo')}
+                onClick={() => handleNavClick('demo')}
                 className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
               >
                 Demo
               </button>
               <button
-                onClick={() => handleNavClick('/about')}
+                onClick={() => handleNavClick('about')}
                 className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
               >
                 About
               </button>
               <button
-                onClick={() => handleNavClick('#faq')}
+                onClick={() => handleNavClick('blog')}
                 className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
               >
-                FAQ
+                Blog
               </button>
               <Button
                 onClick={handleBookConsultation}

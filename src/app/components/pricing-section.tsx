@@ -15,11 +15,12 @@ export default function PricingSection() {
     <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Simple, Transparent Pricing
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Complete AI Customer Service Automation Solution
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Get started with AI-powered customer support automation
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            Transform your customer service with our comprehensive AI automation
+            platform. Setup fee: $1,500 • Monthly service: $299
           </p>
         </div>
 

@@ -115,11 +115,12 @@ export default function DemoSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            See Our AI in Action
+            See Our AI Customer Service Automation in Action
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Experience how our AI handles real customer inquiries instantly. Try
-            it yourself with our interactive demo.
+            Experience how our AI customer service automation handles real
+            customer inquiries instantly. Try our interactive AI customer
+            support demo yourself.
           </p>
         </div>
 

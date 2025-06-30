@@ -1,0 +1,20 @@
+This file is a placeholder for the Open Graph image.
+
+For optimal SEO and social media sharing, create an image file named "og-image.jpg" 
+in this public directory with the following specifications:
+
+- Dimensions: 1200x630 pixels
+- Format: JPG or PNG
+- Content: AI Company Boost logo and text "AI Customer Service Automation | Automate 80% of Support Tickets"
+- Background: Professional gradient or branded background
+- High contrast text for readability
+- File size: Under 300KB for fast loading
+
+This image will be displayed when your website is shared on:
+- Facebook
+- Twitter
+- LinkedIn
+- WhatsApp
+- Other social media platforms
+
+The image is referenced in the metadata as "/og-image.jpg" 

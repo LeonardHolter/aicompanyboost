@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Zap, Shield, Award } from 'lucide-react';
 import Image from 'next/image';
 
+// Note: Since this is a client component, metadata would be set in layout.tsx or parent
+// This is for reference - in a real app you'd use generateMetadata for dynamic metadata
+
 export default function About() {
   const handleBookConsultation = () => {
     window.open(
@@ -23,13 +26,14 @@ export default function About() {
           {/* Headline */}
           <div className="text-center mb-16 sm:mb-20">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              We help businesses automate 80% of their support tickets using
-              custom AI
+              We help businesses automate 80% of their customer service tickets
+              using custom AI automation
               <span className="text-blue-600"> — in under 7 days.</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Fast, reliable customer support automation that actually works for
-              your business.
+              Fast, reliable AI customer service automation that actually works
+              for your business. Transform your customer support with
+              intelligent automation.
             </p>
           </div>
 
@@ -41,16 +45,17 @@ export default function About() {
                   Why We Started AI Company Boost
                 </h2>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  We started this agency after watching companies waste
-                  thousands of hours answering the same customer questions over
-                  and over. Most AI solutions were either too generic or
-                  required heavy dev work. We built a fast, reliable system to
-                  solve real support problems — without code or complexity.
+                  We started this AI customer service automation agency after
+                  watching companies waste thousands of hours answering the same
+                  customer questions over and over. Most AI support solutions
+                  were either too generic or required heavy dev work. We built a
+                  fast, reliable automated customer support system to solve real
+                  support problems — without code or complexity.
                 </p>
                 <div className="mt-6 sm:mt-8 inline-flex items-center bg-white px-4 sm:px-6 py-3 rounded-full shadow-sm">
                   <Award className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 mr-2" />
                   <span className="font-semibold text-gray-900 text-sm sm:text-base">
-                    $10M+ saved in support costs for 500+ businesses
+                    $10M+ saved in customer service costs for 500+ businesses
                   </span>
                 </div>
               </div>
@@ -61,11 +66,12 @@ export default function About() {
           <section className="mb-16 sm:mb-20">
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                Meet Our Team
+                Meet Our AI Customer Service Automation Team
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-                College students from prestigious Columbia University with
-                backgrounds in automation, customer ops, and enterprise AI.
+                Expert team from Columbia University specializing in AI
+                automation, customer operations, and enterprise AI customer
+                service solutions.
               </p>
             </div>
 
@@ -77,7 +83,7 @@ export default function About() {
                   <div className="w-full h-48 sm:h-64 bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
                     <Image
                       src="/team.jpg"
-                      alt="AI Company Boost Team"
+                      alt="AI Company Boost customer service automation team"
                       width={400}
                       height={256}
                       className="w-full h-full object-cover"
@@ -85,7 +91,7 @@ export default function About() {
                     />
                   </div>
                   <p className="text-sm text-gray-600">
-                    The AI Company Boost team
+                    The AI Company Boost customer service automation experts
                   </p>
                 </div>
               </div>
@@ -94,12 +100,12 @@ export default function About() {
               <div className="order-1 lg:order-2">
                 <div className="space-y-6">
                   <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                    We&apos;re college students from Columbia University with
-                    backgrounds in automation, customer ops, and LLMs. Our
-                    founder previously worked on internal tooling at high-growth
-                    SaaS companies and Fortune 500 enterprises, and saw
-                    firsthand how automation saves time and sanity when done
-                    right.
+                    We&apos;re experts from Columbia University specializing in
+                    AI customer service automation, customer ops, and enterprise
+                    AI solutions. Our founder previously worked on internal
+                    automation tooling at high-growth SaaS companies and Fortune
+                    500 enterprises, and saw firsthand how AI automation saves
+                    time and resources when done right.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -108,10 +114,10 @@ export default function About() {
                         <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
-                        AI Engineering
+                        AI Customer Service Engineering
                       </h3>
                       <p className="text-xs text-gray-600">
-                        OpenAI, custom LLMs
+                        OpenAI, custom chatbots, automation
                       </p>
                     </div>
 
@@ -120,9 +126,11 @@ export default function About() {
                         <Users className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
-                        Customer Ops
+                        Customer Support Operations
                       </h3>
-                      <p className="text-xs text-gray-600">Zendesk, Intercom</p>
+                      <p className="text-xs text-gray-600">
+                        Zendesk, Intercom, automation
+                      </p>
                     </div>
 
                     <div className="text-center p-3 sm:p-4 bg-white border rounded-xl shadow-sm">
@@ -130,9 +138,11 @@ export default function About() {
                         <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
-                        Security
+                        Enterprise Security
                       </h3>
-                      <p className="text-xs text-gray-600">SOC 2, GDPR</p>
+                      <p className="text-xs text-gray-600">
+                        SOC 2, GDPR, data protection
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -144,12 +154,13 @@ export default function About() {
           <section className="text-center">
             <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 md:p-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Want to see what this could look like for your business?
+                Want to see how AI customer service automation could transform
+                your business?
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto">
                 Book a free 15-minute consultation and we&apos;ll show you
-                exactly how we can automate your most time-consuming support
-                tasks.
+                exactly how we can automate your most time-consuming customer
+                support tasks with AI.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 sm:mb-8">
@@ -158,7 +169,7 @@ export default function About() {
                   onClick={handleBookConsultation}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-4 text-lg min-h-[56px] touch-manipulation"
                 >
-                  Book Free Consultation
+                  Book Free AI Automation Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
 
@@ -168,7 +179,7 @@ export default function About() {
                   className="border-gray-300 text-gray-700 px-6 sm:px-8 py-4 text-lg hover:bg-gray-50 min-h-[56px] touch-manipulation"
                   onClick={() => (window.location.href = '/#demo')}
                 >
-                  Try Live Demo
+                  Try Live AI Demo
                 </Button>
               </div>
             </div>

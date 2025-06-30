@@ -93,14 +93,15 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Transform Your
-              <span className="text-blue-600 block">Customer Support</span>
+              <span className="text-blue-600 block">Customer Service</span>
               with AI Automation
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl">
-              Reduce response times by 90%, increase customer satisfaction, and
-              scale your support team without hiring. Our AI-powered solution
-              handles 80% of customer inquiries automatically.
+              Reduce customer service response times by 90%, increase customer
+              satisfaction, and scale your customer support team without hiring.
+              Our AI-powered customer service automation solution handles 80% of
+              customer inquiries automatically.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
