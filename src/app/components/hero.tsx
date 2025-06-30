@@ -120,11 +120,6 @@ export default function Hero() {
               <p className="text-sm text-gray-500 mb-4">
                 Trusted by 500+ businesses
               </p>
-              <div className="flex items-center justify-center lg:justify-start space-x-6">
-                <div className="text-xs text-gray-400">
-                  ⭐⭐⭐⭐⭐ 4.9/5 (200+ reviews)
-                </div>
-              </div>
             </div>
           </div>
 
