@@ -249,6 +249,12 @@ export default function Header() {
               Demo
             </button>
             <button
+              onClick={() => handleNavClick('pricing')}
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              Pricing
+            </button>
+            <button
               onClick={() => handleNavClick('faq')}
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
             >
@@ -302,6 +308,12 @@ export default function Header() {
                 className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
               >
                 Demo
+              </button>
+              <button
+                onClick={() => handleNavClick('pricing')}
+                className="text-gray-700 hover:text-blue-600 transition-colors text-left py-2 touch-manipulation"
+              >
+                Pricing
               </button>
               <button
                 onClick={() => handleNavClick('about')}

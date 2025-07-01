@@ -12,7 +12,10 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section
+      id="pricing"
+      className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -20,7 +23,8 @@ export default function PricingSection() {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
             Transform your customer service with our comprehensive AI automation
-            platform. Setup fee: $1,500 • Monthly service: $299
+            platform. We train a custom AI model specifically for your business.
+            Setup fee: $1,500 • Monthly service: $299
           </p>
         </div>
 
@@ -74,7 +78,8 @@ export default function PricingSection() {
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
                   <span className="text-gray-700">
-                    Custom AI training for your business
+                    <strong>Custom AI model trained</strong> specifically for
+                    your business
                   </span>
                 </div>
                 <div className="flex items-center">

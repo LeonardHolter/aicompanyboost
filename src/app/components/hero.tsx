@@ -100,8 +100,9 @@ export default function Hero() {
             <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl">
               Reduce customer service response times by 90%, increase customer
               satisfaction, and scale your customer support team without hiring.
-              Our AI-powered customer service automation solution handles 80% of
-              customer inquiries automatically.
+              We help you integrate our custom built AI-powered customer service
+              automation solution that handles 80% of customer inquiries
+              automatically.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

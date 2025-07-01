@@ -213,6 +213,55 @@ export default function DemoSection() {
                     <Send className="h-4 w-4" />
                   </Button>
                 </div>
+
+                {/* Sample Questions */}
+                <div className="mt-3">
+                  <p className="text-xs text-gray-500 mb-2">💡 Try asking:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      onClick={() => setInputMessage('Estimate my ROI')}
+                      className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors"
+                      disabled={isLoading}
+                    >
+                      💰 Estimate my ROI
+                    </button>
+                    <button
+                      onClick={() => setInputMessage('How much does it cost?')}
+                      className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors"
+                      disabled={isLoading}
+                    >
+                      💲 How much does it cost?
+                    </button>
+                    <button
+                      onClick={() =>
+                        setInputMessage('How long does setup take?')
+                      }
+                      className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors"
+                      disabled={isLoading}
+                    >
+                      ⏰ How long does setup take?
+                    </button>
+                    <button
+                      onClick={() =>
+                        setInputMessage('What platforms do you integrate with?')
+                      }
+                      className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors"
+                      disabled={isLoading}
+                    >
+                      🔗 What platforms integrate?
+                    </button>
+                    <button
+                      onClick={() =>
+                        setInputMessage('Can you handle my industry?')
+                      }
+                      className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors"
+                      disabled={isLoading}
+                    >
+                      🏢 Can you handle my industry?
+                    </button>
+                  </div>
+                </div>
+
                 <p className="text-xs text-gray-500 mt-2">
                   🔥 Real AI demo powered by OpenAI - try it!
                 </p>
