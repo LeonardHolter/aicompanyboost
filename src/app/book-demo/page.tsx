@@ -13,9 +13,9 @@ interface CalendlyWindow extends Window {
 
 interface CalendlyConfig {
   url: string;
-  parentElement: Element | null;
-  prefill: Record<string, unknown>;
-  utm: Record<string, unknown>;
+  parentElement: HTMLElement | null;
+  prefill: Record<string, string>;
+  utm: Record<string, string>;
 }
 
 export default function BookDemo() {
