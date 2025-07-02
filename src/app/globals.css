@@ -14,6 +14,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
   --color-primary-dark: #222831;
   --color-secondary-dark: #393E46;
   --color-accent: #00ADB5;
@@ -70,4 +71,8 @@ body {
   display: inline-flex;
   animation: slide 40s linear infinite;
   white-space: normal;
+}
+
+.font-inter {
+  font-family: var(--font-inter);
 }

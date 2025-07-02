@@ -9,9 +9,9 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-sm flex items-center justify-center" style={{ backgroundColor: '#00ADB5' }}>
-                <span className="text-white font-bold text-lg">N</span>
+                <span className="text-white font-bold text-lg font-inter">N</span>
               </div>
-              <span className="text-white text-xl font-semibold">Nemmis</span>
+              <span className="text-white text-xl font-semibold font-inter">Nemmis</span>
             </div>
 
             {/* Navigation */}
@@ -752,10 +752,10 @@ export default function Home() {
             {/* Logo and Brand */}
             <div className="flex items-center space-x-3 mb-6 md:mb-0">
               <div className="w-10 h-10 rounded-sm flex items-center justify-center" style={{ backgroundColor: '#00ADB5' }}>
-                <span className="text-white font-bold text-xl">N</span>
+                <span className="text-white font-bold text-xl font-inter">N</span>
               </div>
               <div>
-                <h3 className="text-white text-xl font-semibold">Nemmis</h3>
+                <h3 className="text-white text-xl font-semibold font-inter">Nemmis</h3>
                 <p className="text-gray-400 text-sm">Revolutionise your restaurant's communication</p>
               </div>
             </div>
