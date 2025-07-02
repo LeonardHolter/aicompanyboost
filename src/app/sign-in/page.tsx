@@ -133,12 +133,18 @@ export default function SignIn() {
           {/* Additional Links */}
           <div className="mt-6 text-center">
             <div className="flex flex-col space-y-2">
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">
+              <Link
+                href="/forgot-password"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
                 Forgot your password?
-              </a>
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">
+              </Link>
+              <Link
+                href="/help"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
                 Need help accessing your account?
-              </a>
+              </Link>
             </div>
           </div>
         </div>

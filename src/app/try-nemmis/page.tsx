@@ -23,8 +23,8 @@ export default function TryNemmis() {
       if (!data.success) {
         throw new Error(data.error || 'Failed to start call');
       }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unexpected error occurred');
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An unexpected error occurred');
     } finally {
       setIsLoading(false);
     }

@@ -538,7 +538,7 @@ export default function Home() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     I&apos;ve had a fantastic experience with Nemmis. In the beginning, their team
                     did have some trouble getting the AI to learn and understand my menu, since it
-                    has over 120 items, with lots of customisations for customers to make. But after
+                    has over 120 items, with lots of customizations for customers to make. But after
                     they figured that out I&apos;ve got nothing but good things to say. The AI makes
                     me thousands of dollars a month from upselling.
                   </p>
@@ -674,7 +674,7 @@ export default function Home() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     I&apos;ve had a fantastic experience with Nemmis. In the beginning, their team
                     did have some trouble getting the AI to learn and understand my menu, since it
-                    has over 120 items, with lots of customisations for customers to make. But after
+                    has over 120 items, with lots of customizations for customers to make. But after
                     they figured that out I&apos;ve got nothing but good things to say. The AI makes
                     me thousands of dollars a month from upselling.
                   </p>
@@ -725,7 +725,13 @@ export default function Home() {
             {/* Take Delivery & Takeout Orders */}
             <div className="p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
               <div className="mb-4">
-                <img src="/takeout.png" alt="Takeout Orders" className="w-12 h-12 object-contain" />
+                <Image
+                  src="/takeout.png"
+                  alt="Takeout Orders"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
                 Take Delivery & <span style={{ color: '#FF5E57' }}>Takeout Orders</span>
@@ -743,9 +749,11 @@ export default function Home() {
             >
               <div className="flex-1 max-w-md">
                 <div className="mb-8">
-                  <img
+                  <Image
                     src="/yourPOS.png"
                     alt="POS Integration"
+                    width={48}
+                    height={48}
                     className="w-12 h-12 object-contain"
                   />
                 </div>
@@ -758,29 +766,39 @@ export default function Home() {
                 </p>
               </div>
               <div className="relative w-80 h-48 opacity-60">
-                <img
+                <Image
                   src="/tevails.png"
                   alt="Tevails"
+                  width={120}
+                  height={48}
                   className="absolute top-2 left-4 h-8 object-contain filter grayscale"
                 />
-                <img
+                <Image
                   src="/toast1.png"
                   alt="Toast"
+                  width={120}
+                  height={48}
                   className="absolute top-2 right-4 h-8 object-contain filter grayscale"
                 />
-                <img
+                <Image
                   src="/clover.png"
                   alt="Clover"
+                  width={120}
+                  height={48}
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 object-contain filter grayscale"
                 />
-                <img
+                <Image
                   src="/owner.png"
                   alt="Owner"
+                  width={120}
+                  height={48}
                   className="absolute bottom-2 left-8 h-8 object-contain filter grayscale"
                 />
-                <img
+                <Image
                   src="/lightspeed.png"
                   alt="Lightspeed"
+                  width={120}
+                  height={48}
                   className="absolute bottom-0 right-2 h-8 object-contain filter grayscale"
                 />
               </div>
@@ -789,7 +807,13 @@ export default function Home() {
             {/* Take Bookings & Triage Events */}
             <div className="p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
               <div className="mb-4">
-                <img src="/takebookings.png" alt="Bookings" className="w-12 h-12 object-contain" />
+                <Image
+                  src="/takebookings.png"
+                  alt="Bookings"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
                 Take <span style={{ color: '#FF5E57' }}>Bookings</span> & Triage Events
@@ -803,7 +827,13 @@ export default function Home() {
             {/* Secure Every Single Payment */}
             <div className="p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
               <div className="mb-4">
-                <img src="/payments.png" alt="Payments" className="w-12 h-12 object-contain" />
+                <Image
+                  src="/payments.png"
+                  alt="Payments"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
                 Secure Every Single <span style={{ color: '#FF5E57' }}>Payment</span>
@@ -817,7 +847,13 @@ export default function Home() {
             {/* Free Staff From FAQs */}
             <div className="p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
               <div className="mb-4">
-                <img src="/freeStaff.png" alt="Staff FAQs" className="w-12 h-12 object-contain" />
+                <Image
+                  src="/freeStaff.png"
+                  alt="Staff FAQs"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
                 Free <span style={{ color: '#FF5E57' }}>Staff</span> From FAQs
@@ -831,9 +867,11 @@ export default function Home() {
             {/* Memory That Drives Revenue */}
             <div className="p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
               <div className="mb-4">
-                <img
+                <Image
                   src="/DrivesRevenue.png"
                   alt="Memory Revenue"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 object-contain"
                 />
               </div>
@@ -849,9 +887,11 @@ export default function Home() {
             {/* No Language Barriers */}
             <div className="p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
               <div className="mb-4">
-                <img
+                <Image
                   src="/Barriers.png"
                   alt="Language Barriers"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 object-contain"
                 />
               </div>
