@@ -2,12 +2,28 @@
 
 import Script from 'next/script';
 import { useEffect } from 'react';
+import Link from 'next/link';
+
+// Define Calendly types
+interface CalendlyWindow extends Window {
+  Calendly?: {
+    initInlineWidget: (config: CalendlyConfig) => void;
+  };
+}
+
+interface CalendlyConfig {
+  url: string;
+  parentElement: Element | null;
+  prefill: Record<string, unknown>;
+  utm: Record<string, unknown>;
+}
 
 export default function BookDemo() {
   useEffect(() => {
     // Initialize Calendly when the component mounts
-    if (typeof window !== 'undefined' && (window as any).Calendly) {
-      (window as any).Calendly.initInlineWidget({
+    const win = window as CalendlyWindow;
+    if (typeof window !== 'undefined' && win.Calendly) {
+      win.Calendly.initInlineWidget({
         url: 'https://calendly.com/leonard-holterholdings/30min?background_color=393e46&text_color=eeeeee&primary_color=00adb5',
         parentElement: document.querySelector('.calendly-inline-widget'),
         prefill: {},
@@ -22,8 +38,9 @@ export default function BookDemo() {
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
         onLoad={() => {
-          if ((window as any).Calendly) {
-            (window as any).Calendly.initInlineWidget({
+          const win = window as CalendlyWindow;
+          if (win.Calendly) {
+            win.Calendly.initInlineWidget({
               url: 'https://calendly.com/leonard-holterholdings/30min?background_color=393e46&text_color=eeeeee&primary_color=00adb5',
               parentElement: document.querySelector('.calendly-inline-widget'),
               prefill: {},
@@ -61,12 +78,12 @@ export default function BookDemo() {
             <div className="flex items-center space-x-8">
               {/* Logo */}
               <div className="flex items-center space-x-2">
-                <a href="/" className="flex items-center space-x-2">
+                <Link href="/" className="flex items-center space-x-2">
                   <div className="w-8 h-8 rounded-sm flex items-center justify-center" style={{ backgroundColor: '#00ADB5' }}>
-                    <span className="text-white font-bold text-lg">N</span>
+                    <span className="text-white font-bold text-lg font-inter">N</span>
                   </div>
-                  <span className="text-white text-xl font-semibold">Nemmis</span>
-                </a>
+                  <span className="text-white text-xl font-semibold font-inter">Nemmis</span>
+                </Link>
               </div>
 
               {/* Navigation */}
@@ -76,9 +93,9 @@ export default function BookDemo() {
 
             {/* CTA Buttons */}
             <div className="flex items-center space-x-4">
-              <a href="/sign-in" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/sign-in" className="text-gray-300 hover:text-white transition-colors">
                 Sign In →
-              </a>
+              </Link>
             </div>
           </nav>
         </header>
@@ -108,14 +125,14 @@ export default function BookDemo() {
             {/* Additional styling info */}
             <div className="mt-8 text-center">
               <p className="text-gray-400 text-sm">
-                Select a time that works best for you. You'll receive a confirmation email with meeting details.
+                Select a time that works best for you. You&apos;ll receive a confirmation email with meeting details.
               </p>
             </div>
           </div>
 
           {/* Back to Home Link */}
           <div className="text-center mt-12">
-            <a 
+            <Link 
               href="/" 
               className="inline-flex items-center space-x-2 text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200"
             >
@@ -123,7 +140,7 @@ export default function BookDemo() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
               <span>Back to Home</span>
-            </a>
+            </Link>
           </div>
         </main>
       </div>

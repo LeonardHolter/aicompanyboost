@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#222831' }}>
@@ -7,12 +10,12 @@ export default function Home() {
           {/* Logo and Navigation */}
           <div className="flex items-center space-x-8">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-sm flex items-center justify-center" style={{ backgroundColor: '#00ADB5' }}>
                 <span className="text-white font-bold text-lg font-inter">N</span>
               </div>
               <span className="text-white text-xl font-semibold font-inter">Nemmis</span>
-            </div>
+            </Link>
 
             {/* Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -21,16 +24,16 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-4">
-            <a 
+            <Link 
               href="/book-demo"
               className="hidden md:block px-6 py-2 rounded-lg font-semibold transition-all hover:opacity-90"
               style={{ backgroundColor: '#FF5E57', color: 'white' }}
             >
               Book A Demo
-            </a>
-            <a href="/sign-in" className="text-gray-300 hover:text-white transition-colors">
+            </Link>
+            <Link href="/sign-in" className="text-gray-300 hover:text-white transition-colors">
               Sign In →
-            </a>
+            </Link>
           </div>
         </nav>
       </header>
@@ -39,33 +42,33 @@ export default function Home() {
       <main className="px-6 pt-16 pb-20 max-w-6xl mx-auto text-center">
         {/* Main Heading */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          Revolutionise Your Restaurant's<br />
+          Revolutionise Your Restaurant&apos;s<br />
           <span style={{ color: '#00ADB5' }}>Communication with AI</span>
         </h1>
 
         {/* Subheading */}
         <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
           Nemmis helps the average restaurant recover 6-figures per year in lost<br />
-          revenue by ensuring every call is answered through AI — instantly,<br />
+          revenue by ensuring every call is answered through AI &mdash; instantly,<br />
           intelligently, and around the clock.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a 
+          <Link 
             href="/book-demo"
             className="px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90 text-center"
             style={{ backgroundColor: '#FF5E57', color: 'white' }}
           >
             Book A Demo
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/try-nemmis"
             className="px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90 text-center"
             style={{ backgroundColor: '#00ADB5', color: 'white' }}
           >
             Try Nemmis
-          </a>
+          </Link>
         </div>
 
         {/* Trustpilot Section */}
@@ -95,44 +98,44 @@ export default function Home() {
               {/* First set of logos */}
               <div className="flex items-center space-x-16 mr-16">
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/thepizzanomad.png" alt="The Pizza Nomad" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/thepizzanomad.png" alt="The Pizza Nomad" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/toast.png" alt="Toast Coffee + Kitchen" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/toast.png" alt="Toast Coffee + Kitchen" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/toscana.png" alt="Toscana Italian American Restaurant" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/toscana.png" alt="Toscana Italian American Restaurant" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/vietlounge.png" alt="Viet Lounge" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/vietlounge.png" alt="Viet Lounge" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/buchobagles.png" alt="Bucho Bagles" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/buchobagles.png" alt="Bucho Bagles" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/thestation.png" alt="The Station" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/thestation.png" alt="The Station" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
               </div>
               
               {/* Duplicate set for seamless loop */}
               <div className="flex items-center space-x-16">
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/thepizzanomad.png" alt="The Pizza Nomad" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/thepizzanomad.png" alt="The Pizza Nomad" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/toast.png" alt="Toast Coffee + Kitchen" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/toast.png" alt="Toast Coffee + Kitchen" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/toscana.png" alt="Toscana Italian American Restaurant" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/toscana.png" alt="Toscana Italian American Restaurant" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/vietlounge.png" alt="Viet Lounge" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/vietlounge.png" alt="Viet Lounge" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/buchobagles.png" alt="Bucho Bagles" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/buchobagles.png" alt="Bucho Bagles" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
                 <div className="flex justify-center min-w-[120px]">
-                  <img src="/thestation.png" alt="The Station" className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                  <Image src="/thestation.png" alt="The Station" width={120} height={48} className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all" />
                 </div>
               </div>
             </div>
@@ -202,7 +205,7 @@ export default function Home() {
               {/* Title and Description */}
               <div className="text-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                  Unlock the <span style={{ color: '#FF5E57' }}>profits</span> in your restaurant's operations
+                  Unlock the <span style={{ color: '#FF5E57' }}>profits</span> in your restaurant&apos;s operations
                 </h2>
                 <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                   With Nemmis your staff can focus their time and energy on in-person customers, while never having to worry about the phone ringing again.
@@ -297,7 +300,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    I've been using this AI system for the past 4 weeks at my pizza takeaway and delivery restaurant. Our customer base is mostly older and they prefer to call in their orders rather than using online options. Previously, our college staff sometimes missed calls when busy with in-person customers, but now the system handles the calls and inputs orders directly into our POS and printer.
+                    I&apos;ve been using this AI system for the past 4 weeks at my pizza takeaway and delivery restaurant. Our customer base is mostly older and they prefer to call in their orders rather than using online options. Previously, our college staff sometimes missed calls when busy with in-person customers, but now the system handles the calls and inputs orders directly into our POS and printer.
                   </p>
                   <p className="text-gray-400 text-xs mt-4">Date of experience: December 05, 2024</p>
                 </div>
@@ -351,7 +354,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    I've had a fantastic experience with Nemmis. In the beginning, their team did have some trouble getting the AI to learn and understand my menu, since it has over 120 items, with lots of customisations for customers to make. But after they figured that out I've got nothing but good things to say. The AI makes me thousands of dollars a month from upselling.
+                    I&apos;ve had a fantastic experience with Nemmis. In the beginning, their team did have some trouble getting the AI to learn and understand my menu, since it has over 120 items, with lots of customisations for customers to make. But after they figured that out I&apos;ve got nothing but good things to say. The AI makes me thousands of dollars a month from upselling.
                   </p>
                   <p className="text-gray-400 text-xs mt-4">Date of experience: December 18, 2024</p>
                 </div>
@@ -381,7 +384,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    I've been using this AI system for the past 4 weeks at my pizza takeaway and delivery restaurant. Our customer base is mostly older and they prefer to call in their orders rather than using online options. Previously, our college staff sometimes missed calls when busy with in-person customers, but now the system handles the calls and inputs orders directly into our POS and printer.
+                    I&apos;ve been using this AI system for the past 4 weeks at my pizza takeaway and delivery restaurant. Our customer base is mostly older and they prefer to call in their orders rather than using online options. Previously, our college staff sometimes missed calls when busy with in-person customers, but now the system handles the calls and inputs orders directly into our POS and printer.
                   </p>
                   <p className="text-gray-400 text-xs mt-4">Date of experience: December 05, 2024</p>
                 </div>
@@ -435,7 +438,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    I've had a fantastic experience with Nemmis. In the beginning, their team did have some trouble getting the AI to learn and understand my menu, since it has over 120 items, with lots of customisations for customers to make. But after they figured that out I've got nothing but good things to say. The AI makes me thousands of dollars a month from upselling.
+                    I&apos;ve had a fantastic experience with Nemmis. In the beginning, their team did have some trouble getting the AI to learn and understand my menu, since it has over 120 items, with lots of customisations for customers to make. But after they figured that out I&apos;ve got nothing but good things to say. The AI makes me thousands of dollars a month from upselling.
                   </p>
                   <p className="text-gray-400 text-xs mt-4">Date of experience: December 18, 2024</p>
                 </div>
@@ -445,13 +448,13 @@ export default function Home() {
 
           {/* Try Nemmis Button - After Testimonials */}
           <div className="text-center mt-12">
-            <a 
+            <Link 
               href="/try-nemmis"
               className="px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90"
               style={{ backgroundColor: '#FF5E57', color: 'white' }}
             >
               Try Nemmis
-            </a>
+            </Link>
           </div>
 
           {/* Section Divider */}
@@ -501,7 +504,7 @@ export default function Home() {
                   Plug Into <span style={{ color: '#FF5E57' }}>Your POS</span>
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  With 45+ POS integrations, Nemmis sends every order straight to your system—no manual input, no missed steps, and you'll never hear the phone ring again.
+                  With 45+ POS integrations, Nemmis sends every order straight to your system—no manual input, no missed steps, and you&apos;ll never hear the phone ring again.
                 </p>
               </div>
               <div className="relative w-80 h-48 opacity-60">
@@ -595,7 +598,7 @@ export default function Home() {
               How does <span style={{ color: '#FF5E57' }}>onboarding</span> work
             </h2>
             <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-16">
-              An easy onboarding process that's done in 3 steps over 15 days,<br />
+              An easy onboarding process that&apos;s done in 3 steps over 15 days,<br />
               requiring 45 minutes of your time
             </p>
 
@@ -610,7 +613,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">1. Onboarding form</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Fill out a quick form that give our team the knowledge to train and customise your Nemmis agent to your restaurant's needs and requirements
+                  Fill out a quick form that give our team the knowledge to train and customise your Nemmis agent to your restaurant&apos;s needs and requirements
                 </p>
               </div>
 
@@ -658,7 +661,7 @@ export default function Home() {
               Common questions
             </h2>
             <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-16">
-              Still have questions? We've answered some of the most common<br />
+              Still have questions? We&apos;ve answered some of the most common<br />
               queries below to help you make an informed decision.
             </p>
 
@@ -699,7 +702,7 @@ export default function Home() {
                   </summary>
                   <div className="p-6 pt-0" style={{ backgroundColor: '#393E46' }}>
                     <p className="text-gray-300 text-left leading-relaxed">
-                      Nemmis is trained to understand many accents, including South Asian, East Asian, Caribbean, and more. It ensures clear communication for customers whose first language isn't English.
+                      Nemmis is trained to understand many accents, including South Asian, East Asian, Caribbean, and more. It ensures clear communication for customers whose first language isn&apos;t English.
                     </p>
                   </div>
                 </details>
@@ -712,7 +715,7 @@ export default function Home() {
                   </summary>
                   <div className="p-6 pt-0" style={{ backgroundColor: '#393E46' }}>
                     <p className="text-gray-300 text-left leading-relaxed">
-                      You'll get a lifetime private-chat with our team as soon as you sign up. This lets you ask questions, give feedback, or schedule direct calls with our developers for free —no chatbots or long wait times.
+                      You&apos;ll get a lifetime private-chat with our team as soon as you sign up. This lets you ask questions, give feedback, or schedule direct calls with our developers for free —no chatbots or long wait times.
                     </p>
                   </div>
                 </details>
@@ -725,7 +728,7 @@ export default function Home() {
                   </summary>
                   <div className="p-6 pt-0" style={{ backgroundColor: '#393E46' }}>
                     <p className="text-gray-300 text-left leading-relaxed">
-                      You'll find all performance data in a custom dashboard we provide you with, including reports on calls and other key metrics.
+                      You&apos;ll find all performance data in a custom dashboard we provide you with, including reports on calls and other key metrics.
                     </p>
                   </div>
                 </details>
@@ -756,20 +759,20 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-white text-xl font-semibold font-inter">Nemmis</h3>
-                <p className="text-gray-400 text-sm">Revolutionise your restaurant's communication</p>
+                <p className="text-gray-400 text-sm">Revolutionise your restaurant&apos;s communication</p>
               </div>
             </div>
 
             {/* Contact Information */}
             <div className="text-center md:text-right">
               <p className="text-gray-300 text-sm mb-2">Get in touch</p>
-              <a 
+              <Link 
                 href="mailto:contact@nemmis.com" 
                 className="text-white text-lg font-medium hover:opacity-80 transition-opacity"
                 style={{ color: '#00ADB5' }}
               >
                 contact@nemmis.com
-              </a>
+              </Link>
             </div>
           </div>
 
