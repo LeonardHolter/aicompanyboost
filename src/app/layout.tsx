@@ -20,9 +20,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Certus AI - Revolutionise Your Restaurant's Communication with AI",
+  title: "Nemmis - Revolutionise Your Restaurant's Communication with AI",
   description:
-    'Certus AI helps the average restaurant recover 6-figures per year in lost revenue by ensuring every call is answered through AI — instantly, intelligently, and around the clock.',
+    'Nemmis helps the average restaurant recover 6-figures per year in lost revenue by ensuring every call is answered through AI — instantly, intelligently, and around the clock.',
 };
 
 export default function RootLayout({
