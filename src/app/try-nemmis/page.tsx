@@ -47,6 +47,24 @@ export default function TryNemmis() {
               </div>
               <span className="text-white text-xl font-semibold font-inter">Nemmis</span>
             </Link>
+
+            {/* Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                Blog
+              </Link>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex items-center space-x-4">
+            <Link
+              href="/book-demo"
+              className="hidden md:block px-6 py-2 rounded-lg font-semibold transition-all hover:opacity-90"
+              style={{ backgroundColor: '#FF5E57', color: 'white' }}
+            >
+              Book A Demo
+            </Link>
           </div>
         </nav>
       </header>

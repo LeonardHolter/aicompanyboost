@@ -90,7 +90,11 @@ export default function BookDemo() {
               </div>
 
               {/* Navigation */}
-              <div className="hidden md:flex items-center space-x-8"></div>
+              <div className="hidden md:flex items-center space-x-8">
+                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </div>
             </div>
 
             {/* CTA Buttons */}
