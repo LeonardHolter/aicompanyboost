@@ -7,13 +7,7 @@
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "jsx-a11y",
-    "import"
-  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y", "import"],
   "rules": {
     // React Rules
     "react/react-in-jsx-scope": "off",
@@ -21,7 +15,8 @@
     "react/jsx-props-no-spreading": "warn",
     "react/no-unescaped-entities": "warn",
     "react/display-name": "off",
-    
+    "@next/next/no-img-element": "off",
+
     // Import Rules
     "import/prefer-default-export": "off",
     "import/no-default-export": "off",
@@ -33,21 +28,21 @@
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
     ],
-    
+
     // TypeScript Rules
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-non-null-assertion": "warn",
-    
+
     // General Rules
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "no-unused-vars": "off", // Using TypeScript's checker instead
     "max-len": ["warn", { "code": 100, "ignoreStrings": true, "ignoreTemplateLiterals": true }],
     "quotes": ["error", "single", { "avoidEscape": true }],
     "semi": ["error", "always"],
-    
+
     // Accessibility Rules
     "jsx-a11y/anchor-is-valid": [
       "error",
@@ -76,4 +71,4 @@
       "jsx": true
     }
   }
-} 
+}
