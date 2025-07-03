@@ -1,32 +1,96 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-interface CallResponse {
-  success: boolean;
-  error?: string;
-}
+// Import Vapi types - we'll set the type correctly after importing
+type VapiInstance = any; // We'll type this properly after dynamic import
 
 export default function TryNemmis() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isCallActive, setIsCallActive] = useState(false);
+  const [vapi, setVapi] = useState<VapiInstance | null>(null);
+
+  // Initialize Vapi
+  useEffect(() => {
+    const initVapi = async () => {
+      try {
+        // Dynamically import Vapi to avoid SSR issues
+        const { default: Vapi } = await import('@vapi-ai/web');
+        
+        // Use your actual credentials directly
+        const publicKey = '6051a3dc-3fe4-4364-a86e-0a11cfa4419e';
+        const vapiInstance = new Vapi(publicKey);
+        
+        // Set up event listeners
+        vapiInstance.on('call-start', () => {
+          console.log('Call started');
+          setIsCallActive(true);
+          setIsLoading(false);
+        });
+
+        vapiInstance.on('call-end', () => {
+          console.log('Call ended');
+          setIsCallActive(false);
+          setIsLoading(false);
+        });
+
+        vapiInstance.on('error', (error: any) => {
+          console.error('Vapi error:', error);
+          // Better error handling for undefined error messages
+          const errorMessage = error?.message || error?.error || error?.toString() || 'Unknown error occurred';
+          setError('Call failed: ' + errorMessage);
+          setIsCallActive(false);
+          setIsLoading(false);
+        });
+
+        vapiInstance.on('message', (message: any) => {
+          console.log('Vapi message:', message);
+          if (message.type === 'error') {
+            const errorMessage = message.error || message.message || 'Unknown error in message';
+            setError('Call error: ' + errorMessage);
+            setIsCallActive(false);
+            setIsLoading(false);
+          }
+        });
+
+        setVapi(vapiInstance);
+      } catch (error) {
+        console.error('Failed to initialize Vapi:', error);
+        const errorMessage = error instanceof Error ? error.message : 'Failed to initialize voice system';
+        setError(errorMessage);
+      }
+    };
+
+    initVapi();
+  }, []);
 
   const startCall = async (): Promise<void> => {
+    if (!vapi) {
+      setError('Voice system not initialized');
+      return;
+    }
+
     try {
       setIsLoading(true);
       setError(null);
 
-      const response = await fetch('/api/start-call');
-      const data: CallResponse = await response.json();
+      // Use your actual assistant ID directly
+      const assistantId = '790e738c-bdff-46df-b879-e269ce578384';
 
-      if (!data.success) {
-        throw new Error(data.error || 'Failed to start call');
-      }
+      // Start the call with Vapi
+      await vapi.start(assistantId);
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : 'An unexpected error occurred');
-    } finally {
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
+      setError(errorMessage);
       setIsLoading(false);
+    }
+  };
+
+  const endCall = () => {
+    if (vapi) {
+      vapi.stop();
     }
   };
 
@@ -85,15 +149,28 @@ export default function TryNemmis() {
 
         {/* Call Button */}
         <div className="text-center mb-16">
+          {!isCallActive ? (
           <button
             onClick={startCall}
-            disabled={isLoading}
+              disabled={isLoading || !vapi}
             className="px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90 disabled:opacity-50"
             style={{ backgroundColor: '#FF5E57', color: 'white' }}
           >
             {isLoading ? 'Starting Call...' : 'Start Call'}
           </button>
+          ) : (
+            <button
+              onClick={endCall}
+              className="px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90"
+              style={{ backgroundColor: '#dc2626', color: 'white' }}
+            >
+              End Call
+            </button>
+          )}
           {error && <p className="text-red-500 mt-2">{error}</p>}
+          {isCallActive && !error && (
+            <p className="text-green-500 mt-2">Call is active - speak now!</p>
+          )}
         </div>
 
         {/* Example Prompts */}
@@ -116,6 +193,15 @@ export default function TryNemmis() {
                 &ldquo;I&apos;d like to book a table for tonight&rdquo;
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Status Notice */}
+        <div className="max-w-4xl mx-auto mt-16 p-6 rounded-lg" style={{ backgroundColor: '#393E46' }}>
+          <h3 className="text-white font-semibold mb-4">✅ Ready to Go!</h3>
+          <div className="text-gray-300 space-y-2">
+            <p>Your Nemmis voice assistant is configured and ready to take calls.</p>
+            <p className="text-green-400">🎉 Click "Start Call" above to begin your conversation!</p>
           </div>
         </div>
       </main>
