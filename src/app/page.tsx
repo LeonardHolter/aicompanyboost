@@ -37,7 +37,10 @@ export default function Home() {
             >
               Book A Demo
             </Link>
-            <Link href="/sign-in" className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base">
+            <Link
+              href="/sign-in"
+              className="text-gray-300 hover:text-white transition-colors text-sm sm:text-base"
+            >
               Sign In →
             </Link>
           </div>
@@ -314,10 +317,12 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Never Miss An Order</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                      Never Miss An Order
+                    </h3>
                     <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                      Nemmis will answer every call 24/7, so you never miss an opportunity to turn
-                      a customer inquiry into a sale.
+                      Nemmis will answer every call 24/7, so you never miss an opportunity to turn a
+                      customer inquiry into a sale.
                     </p>
                   </div>
                 </div>
@@ -345,7 +350,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Increase Your AOV</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                      Increase Your AOV
+                    </h3>
                     <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                       Trained on your menu, Nemmis will suggest pairings to each customer based on
                       their existing order to increase average order value
@@ -397,7 +404,9 @@ export default function Home() {
                       LN
                     </div>
                     <div className="ml-3 sm:ml-4">
-                      <h4 className="text-white font-semibold text-sm sm:text-base">Lucas Norman</h4>
+                      <h4 className="text-white font-semibold text-sm sm:text-base">
+                        Lucas Norman
+                      </h4>
                       <div className="flex items-center space-x-2">
                         <span className="text-gray-400 text-xs sm:text-sm">US • 1 review</span>
                         <span className="text-gray-400 text-xs sm:text-sm">Feb 13, 2025</span>
@@ -442,7 +451,9 @@ export default function Home() {
                       SN
                     </div>
                     <div className="ml-3 sm:ml-4">
-                      <h4 className="text-white font-semibold text-sm sm:text-base">Samantha Noble</h4>
+                      <h4 className="text-white font-semibold text-sm sm:text-base">
+                        Samantha Noble
+                      </h4>
                       <div className="flex items-center space-x-2">
                         <span className="text-gray-400 text-xs sm:text-sm">US • 1 review</span>
                         <span className="text-gray-400 text-xs sm:text-sm">Feb 20, 2025</span>
@@ -469,7 +480,9 @@ export default function Home() {
                     Since we got Nemmis, those issues have pretty much vanished, and our team can
                     now focus on giving our in-house guests the attention they deserve.
                   </p>
-                  <p className="text-gray-400 text-xs mt-3 sm:mt-4">Date of experience: January 02, 2025</p>
+                  <p className="text-gray-400 text-xs mt-3 sm:mt-4">
+                    Date of experience: January 02, 2025
+                  </p>
                 </div>
 
                 {/* Michael Hamilton Testimonial */}
@@ -485,7 +498,9 @@ export default function Home() {
                       MH
                     </div>
                     <div className="ml-3 sm:ml-4">
-                      <h4 className="text-white font-semibold text-sm sm:text-base">Michael Hamilton</h4>
+                      <h4 className="text-white font-semibold text-sm sm:text-base">
+                        Michael Hamilton
+                      </h4>
                       <div className="flex items-center space-x-2">
                         <span className="text-gray-400 text-xs sm:text-sm">US • 1 review</span>
                         <span className="text-gray-400 text-xs sm:text-sm">Feb 18, 2025</span>
@@ -533,7 +548,9 @@ export default function Home() {
                       LN
                     </div>
                     <div className="ml-3 sm:ml-4">
-                      <h4 className="text-white font-semibold text-sm sm:text-base">Lucas Norman</h4>
+                      <h4 className="text-white font-semibold text-sm sm:text-base">
+                        Lucas Norman
+                      </h4>
                       <div className="flex items-center space-x-2">
                         <span className="text-gray-400 text-xs sm:text-sm">US • 1 review</span>
                         <span className="text-gray-400 text-xs sm:text-sm">Feb 13, 2025</span>
@@ -578,7 +595,9 @@ export default function Home() {
                       SN
                     </div>
                     <div className="ml-3 sm:ml-4">
-                      <h4 className="text-white font-semibold text-sm sm:text-base">Samantha Noble</h4>
+                      <h4 className="text-white font-semibold text-sm sm:text-base">
+                        Samantha Noble
+                      </h4>
                       <div className="flex items-center space-x-2">
                         <span className="text-gray-400 text-xs sm:text-sm">US • 1 review</span>
                         <span className="text-gray-400 text-xs sm:text-sm">Feb 20, 2025</span>
@@ -605,7 +624,9 @@ export default function Home() {
                     Since we got Nemmis, those issues have pretty much vanished, and our team can
                     now focus on giving our in-house guests the attention they deserve.
                   </p>
-                  <p className="text-gray-400 text-xs mt-3 sm:mt-4">Date of experience: January 02, 2025</p>
+                  <p className="text-gray-400 text-xs mt-3 sm:mt-4">
+                    Date of experience: January 02, 2025
+                  </p>
                 </div>
 
                 {/* Michael Hamilton Testimonial */}
@@ -621,7 +642,9 @@ export default function Home() {
                       MH
                     </div>
                     <div className="ml-3 sm:ml-4">
-                      <h4 className="text-white font-semibold text-sm sm:text-base">Michael Hamilton</h4>
+                      <h4 className="text-white font-semibold text-sm sm:text-base">
+                        Michael Hamilton
+                      </h4>
                       <div className="flex items-center space-x-2">
                         <span className="text-gray-400 text-xs sm:text-sm">US • 1 review</span>
                         <span className="text-gray-400 text-xs sm:text-sm">Feb 18, 2025</span>
@@ -693,7 +716,10 @@ export default function Home() {
           {/* Feature Boxes Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto px-4">
             {/* Take Delivery & Takeout Orders */}
-            <div className="p-4 sm:p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
+            <div
+              className="p-4 sm:p-6 rounded-2xl text-left"
+              style={{ backgroundColor: '#393E46' }}
+            >
               <div className="mb-3 sm:mb-4">
                 <Image
                   src="/takeout.png"
@@ -775,7 +801,10 @@ export default function Home() {
             </div>
 
             {/* Take Bookings & Triage Events */}
-            <div className="p-4 sm:p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
+            <div
+              className="p-4 sm:p-6 rounded-2xl text-left"
+              style={{ backgroundColor: '#393E46' }}
+            >
               <div className="mb-3 sm:mb-4">
                 <Image
                   src="/takebookings.png"
@@ -795,7 +824,10 @@ export default function Home() {
             </div>
 
             {/* Secure Every Single Payment */}
-            <div className="p-4 sm:p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
+            <div
+              className="p-4 sm:p-6 rounded-2xl text-left"
+              style={{ backgroundColor: '#393E46' }}
+            >
               <div className="mb-3 sm:mb-4">
                 <Image
                   src="/payments.png"
@@ -815,7 +847,10 @@ export default function Home() {
             </div>
 
             {/* Free Staff From FAQs */}
-            <div className="p-4 sm:p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
+            <div
+              className="p-4 sm:p-6 rounded-2xl text-left"
+              style={{ backgroundColor: '#393E46' }}
+            >
               <div className="mb-3 sm:mb-4">
                 <Image
                   src="/freeStaff.png"
@@ -835,7 +870,10 @@ export default function Home() {
             </div>
 
             {/* Memory That Drives Revenue */}
-            <div className="p-4 sm:p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
+            <div
+              className="p-4 sm:p-6 rounded-2xl text-left"
+              style={{ backgroundColor: '#393E46' }}
+            >
               <div className="mb-3 sm:mb-4">
                 <Image
                   src="/DrivesRevenue.png"
@@ -855,7 +893,10 @@ export default function Home() {
             </div>
 
             {/* No Language Barriers */}
-            <div className="p-4 sm:p-6 rounded-2xl text-left" style={{ backgroundColor: '#393E46' }}>
+            <div
+              className="p-4 sm:p-6 rounded-2xl text-left"
+              style={{ backgroundColor: '#393E46' }}
+            >
               <div className="mb-3 sm:mb-4">
                 <Image
                   src="/Barriers.png"
@@ -899,7 +940,10 @@ export default function Home() {
             {/* Onboarding Steps */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4">
               {/* Step 1: Onboarding Form */}
-              <div className="p-6 sm:p-8 rounded-2xl text-center" style={{ backgroundColor: '#393E46' }}>
+              <div
+                className="p-6 sm:p-8 rounded-2xl text-center"
+                style={{ backgroundColor: '#393E46' }}
+              >
                 <div
                   className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-2xl flex items-center justify-center"
                   style={{ backgroundColor: '#00ADB5' }}
@@ -918,7 +962,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">1. Onboarding form</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+                  1. Onboarding form
+                </h3>
                 <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                   Fill out a quick form that give our team the knowledge to train and customise your
                   Nemmis agent to your restaurant&apos;s needs and requirements
@@ -926,7 +972,10 @@ export default function Home() {
               </div>
 
               {/* Step 2: Clarity Call */}
-              <div className="p-6 sm:p-8 rounded-2xl text-center" style={{ backgroundColor: '#393E46' }}>
+              <div
+                className="p-6 sm:p-8 rounded-2xl text-center"
+                style={{ backgroundColor: '#393E46' }}
+              >
                 <div
                   className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-2xl flex items-center justify-center"
                   style={{ backgroundColor: '#00ADB5' }}
@@ -945,7 +994,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">2. Clarity Call</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+                  2. Clarity Call
+                </h3>
                 <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                   Meet with our Head of Development to iron out how each customer call scenario
                   should be handled.
@@ -953,7 +1004,10 @@ export default function Home() {
               </div>
 
               {/* Step 3: Training & Launch */}
-              <div className="p-6 sm:p-8 rounded-2xl text-center" style={{ backgroundColor: '#393E46' }}>
+              <div
+                className="p-6 sm:p-8 rounded-2xl text-center"
+                style={{ backgroundColor: '#393E46' }}
+              >
                 <div
                   className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-2xl flex items-center justify-center"
                   style={{ backgroundColor: '#00ADB5' }}
@@ -972,7 +1026,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">3. Training & Launch</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+                  3. Training & Launch
+                </h3>
                 <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                   From there our team will take 5 - 10 days to build, integrate and test your Nemmis
                   agent after which we will launch by simply forwarding all of your current calls to
@@ -1120,7 +1176,10 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-700 mt-12 sm:mt-20" style={{ backgroundColor: '#393E46' }}>
+      <footer
+        className="border-t border-gray-700 mt-12 sm:mt-20"
+        style={{ backgroundColor: '#393E46' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           {/* Main Footer Text */}
           <div className="text-center mb-8 sm:mb-12">

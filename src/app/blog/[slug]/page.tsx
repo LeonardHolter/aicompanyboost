@@ -5,11 +5,20 @@ import { Metadata } from 'next';
 // SEO Metadata
 export const metadata: Metadata = {
   title: 'AI Voice Agents for Restaurants | Eliminate Missed Calls & Lost Revenue',
-  description: 'Discover how AI voice agents like Nemmis help restaurants recover $90,000+/year in lost revenue by handling calls, orders, and upsells automatically.',
-  keywords: ['AI voice agents', 'restaurant technology', 'missed calls', 'revenue recovery', 'phone automation', 'restaurant AI'],
+  description:
+    'Discover how AI voice agents like Nemmis help restaurants recover $90,000+/year in lost revenue by handling calls, orders, and upsells automatically.',
+  keywords: [
+    'AI voice agents',
+    'restaurant technology',
+    'missed calls',
+    'revenue recovery',
+    'phone automation',
+    'restaurant AI',
+  ],
   openGraph: {
     title: 'AI Voice Agents for Restaurants | Eliminate Missed Calls & Lost Revenue',
-    description: 'Discover how AI voice agents like Nemmis help restaurants recover $90,000+/year in lost revenue by handling calls, orders, and upsells automatically.',
+    description:
+      'Discover how AI voice agents like Nemmis help restaurants recover $90,000+/year in lost revenue by handling calls, orders, and upsells automatically.',
     type: 'article',
     url: 'https://nemmis.com/blog/ai-voice-agents-restaurants',
     images: [
@@ -24,7 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AI Voice Agents for Restaurants | Eliminate Missed Calls & Lost Revenue',
-    description: 'Discover how AI voice agents like Nemmis help restaurants recover $90,000+/year in lost revenue by handling calls, orders, and upsells automatically.',
+    description:
+      'Discover how AI voice agents like Nemmis help restaurants recover $90,000+/year in lost revenue by handling calls, orders, and upsells automatically.',
     images: ['/restaurant.jpg'],
   },
 };
@@ -180,7 +190,9 @@ export default function BlogPost() {
       {/* Article Header */}
       <article>
         <header className="mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">{post.title}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            {post.title}
+          </h1>
           <div className="flex items-center space-x-4 text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base">
             <span>{post.date}</span>
             <span>•</span>

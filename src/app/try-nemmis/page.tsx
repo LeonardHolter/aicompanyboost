@@ -1,16 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-// Import Vapi types - we'll set the type correctly after importing
-type VapiInstance = any; // We'll type this properly after dynamic import
+// Define interfaces for Vapi events
+interface VapiError {
+  message?: string;
+  error?: string;
+  toString?: () => string;
+}
+
+interface VapiMessage {
+  type?: string;
+  error?: string;
+  message?: string;
+}
 
 export default function TryNemmis() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isCallActive, setIsCallActive] = useState(false);
-  const [vapi, setVapi] = useState<VapiInstance | null>(null);
+
+  const [vapi, setVapi] = useState<any>(null);
 
   // Initialize Vapi
   useEffect(() => {
@@ -18,12 +30,13 @@ export default function TryNemmis() {
       try {
         // Dynamically import Vapi to avoid SSR issues
         const { default: Vapi } = await import('@vapi-ai/web');
-        
+
         // Use your actual credentials directly
         const publicKey = '6051a3dc-3fe4-4364-a86e-0a11cfa4419e';
         const vapiInstance = new Vapi(publicKey);
-        
+
         // Set up event listeners
+
         vapiInstance.on('call-start', () => {
           console.log('Call started');
           setIsCallActive(true);
@@ -36,19 +49,26 @@ export default function TryNemmis() {
           setIsLoading(false);
         });
 
-        vapiInstance.on('error', (error: any) => {
-          console.error('Vapi error:', error);
+        vapiInstance.on('error', (errorData: unknown) => {
+          console.error('Vapi error:', errorData);
           // Better error handling for undefined error messages
-          const errorMessage = error?.message || error?.error || error?.toString() || 'Unknown error occurred';
+          const vapiError = errorData as VapiError;
+          const errorMessage =
+            vapiError?.message ||
+            vapiError?.error ||
+            vapiError?.toString?.() ||
+            'Unknown error occurred';
           setError('Call failed: ' + errorMessage);
           setIsCallActive(false);
           setIsLoading(false);
         });
 
-        vapiInstance.on('message', (message: any) => {
-          console.log('Vapi message:', message);
-          if (message.type === 'error') {
-            const errorMessage = message.error || message.message || 'Unknown error in message';
+        vapiInstance.on('message', (messageData: unknown) => {
+          console.log('Vapi message:', messageData);
+          const vapiMessage = messageData as VapiMessage;
+          if (vapiMessage.type === 'error') {
+            const errorMessage =
+              vapiMessage.error || vapiMessage.message || 'Unknown error in message';
             setError('Call error: ' + errorMessage);
             setIsCallActive(false);
             setIsLoading(false);
@@ -58,7 +78,8 @@ export default function TryNemmis() {
         setVapi(vapiInstance);
       } catch (error) {
         console.error('Failed to initialize Vapi:', error);
-        const errorMessage = error instanceof Error ? error.message : 'Failed to initialize voice system';
+        const errorMessage =
+          error instanceof Error ? error.message : 'Failed to initialize voice system';
         setError(errorMessage);
       }
     };
@@ -150,14 +171,14 @@ export default function TryNemmis() {
         {/* Call Button */}
         <div className="text-center mb-16">
           {!isCallActive ? (
-          <button
-            onClick={startCall}
+            <button
+              onClick={startCall}
               disabled={isLoading || !vapi}
-            className="px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90 disabled:opacity-50"
-            style={{ backgroundColor: '#FF5E57', color: 'white' }}
-          >
-            {isLoading ? 'Starting Call...' : 'Start Call'}
-          </button>
+              className="px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90 disabled:opacity-50"
+              style={{ backgroundColor: '#FF5E57', color: 'white' }}
+            >
+              {isLoading ? 'Starting Call...' : 'Start Call'}
+            </button>
           ) : (
             <button
               onClick={endCall}
@@ -197,11 +218,16 @@ export default function TryNemmis() {
         </div>
 
         {/* Status Notice */}
-        <div className="max-w-4xl mx-auto mt-16 p-6 rounded-lg" style={{ backgroundColor: '#393E46' }}>
+        <div
+          className="max-w-4xl mx-auto mt-16 p-6 rounded-lg"
+          style={{ backgroundColor: '#393E46' }}
+        >
           <h3 className="text-white font-semibold mb-4">✅ Ready to Go!</h3>
           <div className="text-gray-300 space-y-2">
             <p>Your Nemmis voice assistant is configured and ready to take calls.</p>
-            <p className="text-green-400">🎉 Click "Start Call" above to begin your conversation!</p>
+            <p className="text-green-400">
+              🎉 Click &ldquo;Start Call&rdquo; above to begin your conversation!
+            </p>
           </div>
         </div>
       </main>
