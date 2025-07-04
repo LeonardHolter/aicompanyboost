@@ -27,6 +27,22 @@ export const metadata: Metadata = {
     'Nemmis is your 24/7 AI phone agent that handles all restaurant calls like a human. Never miss a call, take orders, manage reservations, and boost revenue with automated call handling. Try our restaurant AI phone system today.',
   keywords:
     'restaurant AI phone system, AI phone agent, restaurant call management, automated order taking, restaurant phone automation, AI restaurant receptionist, 24/7 restaurant phone service, restaurant call handling, AI voice agent, restaurant automation',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#5bbad5',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'Nemmis - AI Phone System for Restaurants | Restaurant Call Management',
     description:
