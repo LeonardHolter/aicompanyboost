@@ -129,34 +129,6 @@ export default function SignIn() {
               )}
             </button>
           </form>
-
-          {/* Additional Links */}
-          <div className="mt-6 text-center">
-            <div className="flex flex-col space-y-2">
-              <Link
-                href="/forgot-password"
-                className="text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Forgot your password?
-              </Link>
-              <Link
-                href="/help"
-                className="text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Need help accessing your account?
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Sign up link */}
-        <div className="text-center mt-8">
-          <p className="text-gray-400">
-            Don&apos;t have an account?{' '}
-            <Link href="/sign-up" className="text-white hover:text-gray-300 transition-colors">
-              Sign up
-            </Link>
-          </p>
         </div>
       </div>
     </div>
