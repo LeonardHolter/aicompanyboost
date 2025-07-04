@@ -3,6 +3,18 @@ import Image from 'next/image';
 
 const blogPosts = [
   {
+    id: 2,
+    title:
+      'Voice AI for Restaurants: The Best Tools to Cut Costs, Boost Orders, and Eliminate Missed Calls',
+    excerpt:
+      'Discover the top voice AI tools transforming restaurants in 2025, from Nemmis to ConverseNow, and how they help recover $90,000+ in lost revenue annually.',
+    category: 'AI Technology',
+    date: 'July 3, 2025',
+    readTime: '12 min read',
+    slug: 'voice-ai-for-restaurants-best-tools',
+    image: '/voice-ai-restaurants-banner.jpg',
+  },
+  {
     id: 1,
     title: 'How AI is Transforming Restaurant Phone Operations',
     excerpt:
@@ -11,7 +23,7 @@ const blogPosts = [
     date: 'July 2, 2025',
     readTime: '5 min read',
     slug: 'ai-transforming-restaurant-phone-operations',
-    image: '/blog/ai-transform.jpg',
+    image: '/restaurant.jpg',
   },
 ];
 
@@ -40,8 +52,8 @@ export default function Blog() {
             <Link href={`/blog/${post.slug}`}>
               <div className="relative h-48">
                 <Image
-                  src="/restaurant.jpg"
-                  alt="Restaurant with AI phone system"
+                  src={post.image}
+                  alt={`${post.title} - Restaurant AI Technology`}
                   width={400}
                   height={200}
                   className="w-full h-full object-cover"
