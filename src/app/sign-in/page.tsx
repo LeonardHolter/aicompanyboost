@@ -1,24 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function SignIn() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  const { signIn, user } = useAuth();
+  const router = useRouter();
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user) {
+      router.push('/dashboard');
+    }
+  }, [user, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    setShowError(false);
 
-    // Simulate a login attempt
-    setTimeout(() => {
+    if (!email || !password) {
+      setError('Please fill in all fields');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      setError('');
+
+      await signIn(email, password);
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Sign in error:', error);
+      setError('Failed to sign in. Please try again.');
+    } finally {
       setIsLoading(false);
-      setShowError(true);
-    }, 1000);
+    }
   };
 
   return (
@@ -56,7 +78,7 @@ export default function SignIn() {
         <div className="p-8 rounded-2xl" style={{ backgroundColor: '#393E46' }}>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Error Message */}
-            {showError && (
+            {error && (
               <div
                 className="p-4 rounded-lg"
                 style={{ backgroundColor: '#FF5E57', color: 'white' }}
@@ -70,27 +92,25 @@ export default function SignIn() {
                       d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="font-semibold">Invalid login credentials</span>
+                  <span className="font-semibold">Login Failed</span>
                 </div>
-                <p className="text-sm mt-1">
-                  Please check your username and password and try again.
-                </p>
+                <p className="text-sm mt-1">{error}</p>
               </div>
             )}
 
-            {/* Username Field */}
+            {/* Email Field */}
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-white mb-2">
-                Username
+              <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                Email
               </label>
               <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={e => setUsername(e.target.value)}
+                type="email"
+                id="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-gray-600 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-colors"
                 style={{ backgroundColor: '#222831', color: 'white' }}
-                placeholder="Enter your username"
+                placeholder="Enter your email"
                 required
               />
             </div>
